@@ -42,7 +42,7 @@ Este plugin provee soporte inicial para Neovim, incluyendo detección automátic
 
 ```lua
 {
-  "umbral-lang/umbral-nvim",
+  "hersac/umbral-nvim",
   ft = "umbral",
 }
 ```
@@ -50,13 +50,13 @@ Este plugin provee soporte inicial para Neovim, incluyendo detección automátic
 ### Vim-Plug
 
 ```vim
-Plug 'umbral-lang/umbral-nvim'
+Plug 'hersac/umbral-nvim'
 ```
 
 ### Packer
 
 ```lua
-use 'umbral-lang/umbral-nvim'
+use 'hersac/umbral-nvim'
 ```
 
 ---
