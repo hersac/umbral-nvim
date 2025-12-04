@@ -1,5 +1,5 @@
 " Comentarios
-syntax region umbralComentario start=/!!/ end=/$/ keepend contains=NONE containedin=ALL transparent
+syntax match umbralComentario /!!.*$/ contains=NONE containedin=ALL
 highlight link umbralComentario Comment
 
 " Strings triple '''
@@ -22,7 +22,7 @@ highlight link umbralStringDouble String
 syntax match umbralKeywordControl /\<\(i\|e\|wh\|r\|th\|n\|out\|equip\|origin\|as\)\>/
 highlight link umbralKeywordControl Keyword
 
-" Declaraciones v: c: f: cs: pr: pu:
+" Declaraciones
 syntax match umbralKeywordDecl /\<\(v\|c\|f\|cs\|pr\|pu\):/
 highlight link umbralKeywordDecl Keyword
 
@@ -32,9 +32,8 @@ highlight link umbralModifier StorageClass
 
 " Operadores
 syntax match umbralOperator /\(->\|+\|-\|\*\|\/\|%\|==\|!=\|<=\|>=\|<\|>\|&&\|||\|!\|=\)/
-highlight link umbralOperator Operator
-
 syntax match umbralOperatorSpread /&/
+highlight link umbralOperator Operator
 highlight link umbralOperatorSpread Operator
 
 " Tipos primitivos
@@ -54,12 +53,10 @@ highlight link umbralNumero Number
 syntax match umbralBoolean /\<\(true\|false\)\>/
 highlight link umbralBoolean Boolean
 
-" Llamadas de funciones con punto
+" Llamadas de funciones
 syntax match umbralFuncionPunto /[a-zA-Z_][a-zA-Z0-9_]*\.[a-zA-Z_][a-zA-Z0-9_]*\ze\s*(/
-highlight link umbralFuncionPunto Function
-
-" Llamadas de funciones simples
 syntax match umbralFuncionSimple /\<[a-zA-Z_][a-zA-Z0-9_]*\ze\s*(/
+highlight link umbralFuncionPunto Function
 highlight link umbralFuncionSimple Function
 
 " Builtins
