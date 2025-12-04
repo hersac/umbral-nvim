@@ -1,5 +1,5 @@
 " Comentarios
-syntax match umbralComentario /!!.*$/
+syntax region umbralComentario start=/!!/ end=/$/ keepend contains=NONE
 highlight link umbralComentario Comment
 
 " Strings triple '''
