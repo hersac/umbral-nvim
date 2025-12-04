@@ -263,4 +263,8 @@ Puedes enviar PRs o abrir issues en el repositorio oficial.
 
 ## 10. Licencia
 
-Este proyecto se distribuye bajo la licencia MIT.
+Este proyecto se distribuye bajo la **Apache License 2.0**.
+
+Puedes consultar el texto completo en el archivo `LICENSE` incluido en este repositorio o en la documentación oficial:
+
+https://www.apache.org/licenses/LICENSE-2.0
