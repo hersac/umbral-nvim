@@ -18,12 +18,20 @@ highlight link umbralStringSingle String
 syntax region umbralStringDouble start=/"/ end=/"/ contains=umbralEscape,umbralEscapeRef
 highlight link umbralStringDouble String
 
-" Palabras clave
-syntax match umbralKeywordControl /\<\(i\|e\|wh\|r\|th\|n\|out\|equip\|origin\|as\)\>/
+" Palabras clave de control
+syntax match umbralKeywordControl /\<\(i\|ie\|e\|wh\|r\|th\|n\|out\|equip\|origin\|as\)\>/
 highlight link umbralKeywordControl Keyword
 
+" Palabras clave condicionales con dos puntos
+syntax match umbralKeywordConditional /\<\(sw\|ca\|def\|tr\|ct\|tw\|fy\):/
+highlight link umbralKeywordConditional Keyword
+
+" Palabras clave OOP con dos puntos
+syntax match umbralKeywordOOP /\<\(ext\|imp\|in\):/
+highlight link umbralKeywordOOP Keyword
+
 " Declaraciones
-syntax match umbralKeywordDecl /\<\(v\|c\|f\|cs\|pr\|pu\):/
+syntax match umbralKeywordDecl /\<\(v\|c\|f\|fo\|fe\|cs\|pr\|pu\):/
 highlight link umbralKeywordDecl Keyword
 
 " Modificadores
@@ -37,7 +45,7 @@ highlight link umbralOperator Operator
 highlight link umbralOperatorSpread Operator
 
 " Tipos primitivos
-syntax match umbralType /\<\(Int\|Str\|Flo\|Bool\|Void\)\>/
+syntax match umbralType /\<\(Int\|Str\|Flo\|Bool\|Void\|Error\)\>/
 highlight link umbralType Type
 
 " Arreglos
@@ -62,3 +70,7 @@ highlight link umbralFuncionSimple Function
 " Builtins
 syntax match umbralBuiltin /\<tprint\>/
 highlight link umbralBuiltin Function
+
+" Propiedades builtin
+syntax match umbralProperty /\.length\>/
+highlight link umbralProperty Special

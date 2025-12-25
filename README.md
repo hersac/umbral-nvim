@@ -100,42 +100,66 @@ syntax/umbral.vim
 &interpolacion'''
 ```
 
-### Palabras clave
+### Palabras clave de control
 
 ```
-i
-e
-wh
-r
-th
-n
-out
-equip
-origin
-as
+i       !! if (condicional)
+ie      !! if-else (condicional con alternativa)
+e       !! else
+wh      !! while (bucle)
+r       !! return
+th      !! this (referencia al objeto actual)
+n       !! new (crear instancia)
+out     !! salida/output
+equip   !! importar módulo
+origin  !! origen del módulo
+as      !! alias para importación
+```
+
+### Palabras clave condicionales
+
+```
+sw:     !! switch (selector)
+ca:     !! case (caso)
+def:    !! default (caso por defecto)
+tr:     !! try (intentar)
+ct:     !! catch (capturar error)
+tw:     !! throw (lanzar error)
+fy:     !! finally (finalmente)
+```
+
+### Palabras clave OOP
+
+```
+ext:    !! extends (herencia)
+imp:    !! implements (implementar interfaz)
+in:     !! interface (interfaz)
 ```
 
 ### Declaradores
 
 ```
-v:
-c:
-f:
-cs:
-pr:
-pu:
+v:      !! variable
+c:      !! constante
+f:      !! función
+fo:     !! for (bucle for)
+fe:     !! foreach (bucle para cada elemento)
+cs:     !! class (clase)
+pr:     !! private (privado)
+pu:     !! public (público)
 ```
 
 ### Tipos de datos
 
 ```
-Int
-Str
-Flo
-Bool
-Void
-[]
-[][]
+Int     !! entero
+Str     !! cadena de texto
+Flo     !! flotante
+Bool    !! booleano
+Void    !! sin retorno
+Error   !! tipo de error
+[]      !! array unidimensional
+[][]    !! array bidimensional
 ```
 
 ### Operadores
@@ -161,10 +185,11 @@ true
 false
 ```
 
-### Funciones built-in
+### Funciones y propiedades built-in
 
 ```
-tprint
+tprint      !! función de impresión
+.length     !! propiedad de longitud (arrays, strings)
 ```
 
 ### Invocaciones
