@@ -136,6 +136,13 @@ imp:    !! implements (implementar interfaz)
 in:     !! interface (interfaz)
 ```
 
+### Palabras clave asíncronas
+
+```
+asy:    !! async (función asíncrona)
+awa:    !! await (esperar promesa)
+```
+
 ### Declaradores
 
 ```

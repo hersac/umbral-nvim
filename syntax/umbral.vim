@@ -30,6 +30,10 @@ highlight link umbralKeywordConditional Keyword
 syntax match umbralKeywordOOP /\<\(ext\|imp\|in\):/
 highlight link umbralKeywordOOP Keyword
 
+" Palabras clave asíncronas
+syntax match umbralKeywordAsync /\<\(asy\|awa\):/
+highlight link umbralKeywordAsync Keyword
+
 " Declaraciones
 syntax match umbralKeywordDecl /\<\(v\|c\|f\|fo\|fe\|cs\|pr\|pu\):/
 highlight link umbralKeywordDecl Keyword
