@@ -269,10 +269,52 @@ v: literal = 'Sin interpolación &nombre';
 umbral-nvim/
 ├── LICENSE
 ├── README.md
+├── VERSION
+├── .github/
+│   └── workflows/
+│       ├── auto-tag.yml
+│       └── release.yml
 ├── ftdetect/
 │   └── umbral.vim
-└── syntax/
-    └── umbral.vim
+├── syntax/
+│   └── umbral.vim
+└── plugin/
+    └── umbral-devicons.vim
+```
+
+### Versionado y releases
+
+La versión (archivo `VERSION`) sigue la versión del lenguaje Umbral
+soportada (`1.2.5`, `1.3.6`, `1.4.0`, ...). Al mezclar a `main`, el workflow
+**Auto Tag** crea el tag `vX.Y.Z` y la release si no existen; el push del
+tag dispara el workflow **Release**, que sube el código fuente versionado
+(`umbral-nvim-X.Y.Z.zip` + `.tar.gz`). Para publicar una nueva versión,
+el PR debe actualizar `VERSION`.
+
+---
+
+## 7b. Icono para archivos `.um` (NERDTree, neo-tree, nvim-tree)
+
+El plugin registra automáticamente un icono de fuego (glifo `fa-fire` de
+Nerd Fonts) para la extensión `um`:
+
+- Con [vim-devicons](https://github.com/ryanoasis/vim-devicons) (NERDTree):
+  no requiere configuración, funciona al estar ambos plugins instalados.
+- Con [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+  (neo-tree, nvim-tree, lualine, ...): se registra solo si aún no definiste
+  un icono para `um`.
+
+Requisitos y notas:
+
+- Necesitas una **Nerd Font** activa en tu terminal: NERDTree es texto y no
+  puede mostrar imágenes SVG. No es necesario copiar ningún `.svg` a este
+  repo para el icono del árbol.
+- Si ya tienes tu propio icono para `um`, se respeta y no se sobrescribe.
+- Personalización opcional:
+
+```vim
+let g:umbral_icon = 'X'          " glifo propio (vim-devicons)
+let g:umbral_icon_color = '#E25822' " color propio (nvim-web-devicons)
 ```
 
 ---

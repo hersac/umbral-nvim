@@ -1,0 +1,36 @@
+name: Release
+
+# Se dispara con cada tag v* (manual o creado por el workflow Auto Tag).
+# No hay compilación: empaqueta el código fuente del tag en .zip y .tar.gz
+# versionados y los sube a la release correspondiente.
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  package-source:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Empaquetar código fuente versionado
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "Empaquetando versión: ${VERSION}"
+          git archive -o "umbral-nvim-${VERSION}.zip" HEAD
+          git archive --format=tar.gz -o "umbral-nvim-${VERSION}.tar.gz" HEAD
+          ls -l "umbral-nvim-${VERSION}.zip" "umbral-nvim-${VERSION}.tar.gz"
+
+      - name: Subir fuentes al release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            umbral-nvim-*.zip
+            umbral-nvim-*.tar.gz
